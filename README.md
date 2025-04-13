@@ -1,4 +1,4 @@
-# 🔆 Análise do Consumo de Energia na Cidade de Solária
+# Análise do Consumo de Energia na Cidade de Solária
 
 Este projeto realiza uma análise estatística e modelagem do consumo de energia elétrica residencial da cidade fictícia de **Solária**, com o objetivo de identificar os fatores climáticos que mais impactam a demanda energética ao longo dos meses.
 
@@ -29,7 +29,7 @@ Foram analisados dados mensais das seguintes variáveis:
 
 ---
 
-## 📈 1. Análise de Correlação
+## 1. Análise de Correlação
 
 Foi utilizado o **Coeficiente de Correlação de Pearson** para identificar relações entre as variáveis.
 
@@ -42,7 +42,7 @@ Foi utilizado o **Coeficiente de Correlação de Pearson** para identificar rela
 
 ---
 
-## 📐 2. Modelagem - Regressão Linear
+## 2. Modelagem - Regressão Linear
 
 Foi ajustado um modelo linear do tipo:
 
@@ -54,17 +54,17 @@ Onde:
 - \( y \): Consumo de energia (kWh)
 - \( x \): Temperatura média (°C)
 
-### 🧮 Coeficientes Obtidos:
+### Coeficientes Obtidos:
 
 - **A (intercepto)**: `145.46`  
 - **B (inclinação)**: `8.15`
 
-### 🔍 Incertezas:
+### Incertezas:
 
 - **σA (incerteza de A)**: ±`7.37`
 - **σB (incerteza de B)**: ±`0.27`
 
-### 📌 Equação final:
+### Equação final:
 
 \[
 \boxed{y = (145{,}46 \pm 7{,}37) + (8{,}15 \pm 0{,}27) \cdot x}
@@ -72,9 +72,9 @@ Onde:
 
 ---
 
-## 📊 3. Visualização (Scilab)
+## 3. Visualização (Scilab)
 
-### 🎯 Objetivo:
+### Objetivo:
 
 Gerar o gráfico de dispersão entre consumo e temperatura, com a reta de regressão ajustada.
 
