@@ -1,10 +1,10 @@
-# 📊 Análise de Consumo de Energia em Solária
+# Análise de Consumo de Energia em Solária
 
 Este projeto apresenta uma análise estatística do consumo de energia elétrica na cidade fictícia de **Solária**, com o objetivo de identificar quais fatores ambientais mais influenciam a demanda energética ao longo do ano.
 
 ---
 
-## 🔍 Objetivo
+## Objetivo
 
 Investigar a relação entre o **consumo mensal de energia elétrica residencial (kWh)** e duas variáveis climáticas:
 
@@ -32,20 +32,20 @@ Investigar a relação entre o **consumo mensal de energia elétrica residencial
 
 ---
 
-## 📈 1. Análise de Correlação
+## 1. Análise de Correlação
 
 Utilizamos o **coeficiente de correlação de Pearson** para verificar a relação entre o consumo e cada variável:
 
 - **Temperatura x Consumo**: `r ≈ 0.98` ✅ (Correlação forte e positiva)
 - **Precipitação x Consumo**: `r ≈ 0.35` ❌ (Correlação fraca)
 
-🔎 **Conclusão**: Apenas a **temperatura** possui correlação significativa com o consumo de energia.
+**Conclusão**: Apenas a **temperatura** possui correlação significativa com o consumo de energia.
 
 ---
 
-## 📉 2. Modelagem - Regressão Linear
+## 2. Modelagem - Regressão Linear
 
-### 🧮 Equação ajustada (Temperatura → Consumo):
+### Equação ajustada (Temperatura → Consumo):
 
 \[
 \boxed{y = 10.94x + 57.5}
@@ -62,19 +62,53 @@ Utilizamos o **coeficiente de correlação de Pearson** para verificar a relaç�
 
 ### a) Consumo vs Temperatura (com regressão)
 
-![consumo-vs-temperatura](./plots/consumo_vs_temperatura.png)
+```
+scf(0);
+plot(temperatura, consumo, 'bo');
+xtitle('Consumo vs Temperatura','Temperatura (°C)','Consumo (kWh)');
+x = linspace(min(temperatura), max(temperatura), 100);
+y = a*x + b;
+plot(x, y, 'r-'); // reta ajustada
+```
+
+Resultados esperados:
+
+    Correlação com temperatura (r_temp) ≈ 0.98 → Correlação muito forte e positiva
+
+    Correlação com precipitação (r_prec) ≈ 0.35 → Correlação fraca
+
+Portanto, somente a temperatura tem correlação significativa com o consumo de energia.
 
 ---
 
 ### b) Consumo vs Precipitação (com regressão)
 
-![consumo-vs-precipitacao](./plots/consumo_vs_precipitacao.png)
+y = a · temperatura + b, onde y é o consumo
+
+```
+scf(1);
+plot(precipitacao, consumo, 'go');
+xtitle('Consumo vs Precipitação','Precipitação (mm)','Consumo (kWh)');
+[coef2, ~] = regress(Y, precipitacao');
+a2 = coef2(1); b2 = coef2(2);
+x2 = linspace(min(precipitacao), max(precipitacao), 100);
+y2 = a2*x2 + b2;
+plot(x2, y2, 'm-');
+```
+
+Resultado esperado:
+
+    Equação ajustada:
+    y=10.94x+57.5y=10.94x+57.5
+    (valores aproximados)
+
+    Incerteza em A: ≈ 0.3
+
+    Incerteza em B: ≈ 8
 
 ---
 
-## 💻 Código-Fonte
-
-Todos os scripts estão na pasta [`/scilab`](./scilab), incluindo:
+## Código-Fonte
 
 - `analise.sce`: análise completa
 - `graficos.sce`: geração dos gráficos
@@ -82,18 +116,10 @@ Todos os scripts estão na pasta [`/scilab`](./scilab), incluindo:
 
 ---
 
-## 🧠 Conclusões
+## Conclusões
 
 - A **temperatura** é o principal fator climático que afeta o consumo de energia elétrica em Solária.
 - A **precipitação** apresenta uma correlação fraca, não sendo significativa estatisticamente.
 - A regressão linear permite estimar o consumo com base na temperatura com boa precisão.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- Scilab 6.x
-- Markdown
-- Git/GitHub
 
 ---
