@@ -103,3 +103,8 @@ plot(x_model, y_model, 'r-');
 
 // Legenda
 legend("Dados Observados", "Reta de Regressão");
+```
+
+### Imagem do Grafico:
+
+![image](https://github.com/user-attachments/assets/435cb790-afde-4fe5-b3cb-042f955c6099)
