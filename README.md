@@ -148,4 +148,4 @@ legend("Dados Observados", "Reta de Regressão");
 
 ### Imagem do Grafico:
 
-![image](https://github.com/user-attachments/assets/435cb790-afde-4fe5-b3cb-042f955c6099)
+![image](https://github.com/user-attachments/assets/8cae42da-50bd-403d-b290-027ab315f46a)
