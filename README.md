@@ -83,31 +83,33 @@ Foi utilizado o **Coeficiente de Correlação de Pearson** para identificar rela
 
 ## 2. Modelagem - Regressão Linear
 
-Foi ajustado um modelo linear do tipo:
+A regressão linear simples foi aplicada para modelar a relação entre temperatura (variável independente) e consumo (variável dependente):
 
-\[
+Equação do Modelo:
+
+```
 y = A + Bx
-\]
+```
 
-Onde:
-- \( y \): Consumo de energia (kWh)
-- \( x \): Temperatura média (°C)
+Coeficientes Obtidos:
 
-### Coeficientes Obtidos:
+- A (intercepto) = 145,46
 
-- **A (intercepto)**: `145.46`  
-- **B (inclinação)**: `8.15`
+- B (inclinação) = 8,15
 
-### Incertezas:
+Incertezas Calculadas:
 
-- **σA (incerteza de A)**: ±`7.37`
-- **σB (incerteza de B)**: ±`0.27`
+- σᵀ (desvio dos dados): calculado com base nos resíduos.
 
-### Equação final:
+- σᴀ (incerteza do intercepto) = ±7,37
 
-\[
-\boxed{y = (145{,}46 \pm 7{,}37) + (8{,}15 \pm 0{,}27) \cdot x}
-\]
+- σᵁ (incerteza do coeficiente angular) = ±0,27
+
+Equação Final com Incertezas:
+
+```
+y = (145{,}46 ± 7{,}37) + (8{,}15 ± 0{,}27) \cdot x
+```
 
 ---
 
